@@ -1,12 +1,12 @@
 #######################################
 # Instances (KEYWORD1)
 #######################################
-Mtasks  KEYWORD1
-mtasks  KEYWORD1
+Mtasks	KEYWORD1
+mtasks	KEYWORD1
 #######################################
 # Methods and Functions (KEYWORD2)
 #######################################
-isTaskReady KEYWORD2
-setDuration KEYWORD2
-setLastTime KEYWORD2
-reset   KEYWORD2
+isTaskReady	KEYWORD2
+setDuration	KEYWORD2
+setLastTime	KEYWORD2
+reset	KEYWORD2
