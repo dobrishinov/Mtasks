@@ -17,7 +17,7 @@ void loop()
 
   if (isReadyToChangeDuration) //Example condition to change task duration on run time
   {
-    taskOne.setInterval(2000);
+    taskOne.setDuration(2000);
   }
 
   if (taskOne.isTaskReady()) //Check if task is ready
