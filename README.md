@@ -10,15 +10,28 @@ We have the option to change duration of the task runtime when we want.
 ```cpp
 #include <Mtasks.h>
 
-Mtasks taskOne(1000); //Create a task and specify the duration in miliseconds
+/**
+*	Example how to use multiple tasks.
+*/
 
-void setup(){
+Mtasks taskOne(1000); //Create a first task and specify the duration in miliseconds
+Mtasks taskTwo(250);  //Create a second task and specify the duration in miliseconds
+
+void setup()
+{
   Serial.begin(115200);
 }
 
-void loop(){
-  if(taskOne.isTaskReady()){ //Check if task is ready
-    Serial.println("I'm Ready!"); //Call logic for your needs
+void loop()
+{
+  if (taskOne.isTaskReady()) //Check if first task is ready
+  {
+    Serial.println("Task 1 is Ready!"); //Call logic for your needs
+  }
+
+  if (taskTwo.isTaskReady()) //Check if second task is ready
+  {
+    Serial.println("Task 2 is Ready!"); //Call logic for your needs
   }
 }
 
