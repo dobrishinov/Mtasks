@@ -27,10 +27,10 @@ bool Mtasks::isTaskReady()
 
 bool Mtasks::isTaskReady(unsigned long currentTime)
 {
-    return isTaskReady(currentTime, this->_duration);
+    return _isTaskReady(currentTime, this->_duration);
 }
 
-bool Mtasks::isTaskReady(unsigned long currentTime, unsigned long duration)
+bool Mtasks::_isTaskReady(unsigned long currentTime, unsigned long duration)
 {
     if ((unsigned long)currentTime - _lastTime >= duration)
     {

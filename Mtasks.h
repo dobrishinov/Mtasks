@@ -24,7 +24,7 @@ public:
 private:
   unsigned long _lastTime = 0;
   unsigned long _duration = 0;
-  bool isTaskReady(unsigned long currentTime, unsigned long duration);
+  bool _isTaskReady(unsigned long currentTime, unsigned long duration);
 };
 
 #endif
