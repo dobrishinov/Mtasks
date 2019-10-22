@@ -6,13 +6,23 @@
 #include "Mtasks.h"
 
 /**
-* Constructor
+* Constructors
 */
-Mtasks::Mtasks() {}
+Mtasks::Mtasks()
+{
+    _init();
+}
 
 Mtasks::Mtasks(unsigned long duration)
 {
+    _init();
     setDuration(duration);
+}
+
+void Mtasks::_init()
+{
+    this->_lastTime = 0;
+    this->_duration = 0;
 }
 
 void Mtasks::setDuration(unsigned long duration)

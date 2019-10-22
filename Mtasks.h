@@ -22,8 +22,9 @@ public:
   void reset();
 
 private:
-  unsigned long _lastTime = 0;
-  unsigned long _duration = 0;
+  unsigned long _lastTime;
+  unsigned long _duration;
+  void _init();
   bool _isTaskReady(unsigned long currentTime, unsigned long duration);
 };
 
