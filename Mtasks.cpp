@@ -15,6 +15,16 @@ Mtasks::Mtasks(unsigned long duration)
     setDuration(duration);
 }
 
+void Mtasks::setDuration(unsigned long duration)
+{
+    this->_duration = duration;
+}
+
+bool Mtasks::isTaskReady()
+{
+    return isTaskReady(millis());
+}
+
 bool Mtasks::isTaskReady(unsigned long currentTime)
 {
     return isTaskReady(currentTime, this->_duration);
@@ -28,4 +38,14 @@ bool Mtasks::isTaskReady(unsigned long currentTime, unsigned long duration)
         return true;
     }
     return false;
+}
+
+void Mtasks::reset()
+{
+    setLastTime(millis());
+}
+
+void Mtasks::setLastTime(unsigned long time)
+{
+    this->_lastTime = time;
 }

@@ -11,32 +11,20 @@
 class Mtasks
 {
 public:
-    Mtasks();
-    Mtasks(unsigned long duration);
+  Mtasks();
+  Mtasks(unsigned long duration);
 
-    bool isTaskReady(unsigned long currentTime);
-    bool isTaskReady(unsigned long currentTime, unsigned long duration);
-    bool isTaskReady()
-    {
-        return isTaskReady(millis());
-    }
+  bool isTaskReady();
+  bool isTaskReady(unsigned long currentTime);
 
-    void setDuration(unsigned long duration)
-    {
-        this->_duration = duration;
-    }
-    void setLastTime(unsigned long time)
-    {
-        this->_lastTime = time;
-    }
-    void reset()
-    {
-        setLastTime(millis());
-    }
+  void setDuration(unsigned long duration);
+  void setLastTime(unsigned long time);
+  void reset();
 
 private:
-    unsigned long _lastTime = 0;
-    unsigned long _duration = 0;
+  unsigned long _lastTime = 0;
+  unsigned long _duration = 0;
+  bool isTaskReady(unsigned long currentTime, unsigned long duration);
 };
 
 #endif
