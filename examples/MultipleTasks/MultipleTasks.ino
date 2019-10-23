@@ -4,8 +4,8 @@
 *	Example how to use multiple tasks.
 */
 
-Mtasks taskOne(1000); //Create a first task and specify the duration in miliseconds
-Mtasks taskTwo(250);  //Create a second task and specify the duration in miliseconds
+Mtasks taskOne(1000); //Create a first task and specify the task execution interval in miliseconds
+Mtasks taskTwo(250);  //Create a second task and specify the task execution interval in miliseconds
 
 void setup()
 {

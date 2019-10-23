@@ -12,20 +12,20 @@ class Mtasks
 {
 public:
   Mtasks();
-  Mtasks(unsigned long duration);
+  Mtasks(unsigned long interval);
 
   bool isTaskReady();
   bool isTaskReady(unsigned long currentTime);
 
-  void setDuration(unsigned long duration);
+  void setTaskInterval(unsigned long interval);
   void reset();
 
 private:
   unsigned long _lastTime;
-  unsigned long _duration;
+  unsigned long _interval;
   void _init();
   void _setLastTime(unsigned long time);
-  bool _isTaskReady(unsigned long currentTime, unsigned long duration);
+  bool _isTaskReady(unsigned long currentTime, unsigned long interval);
 };
 
 #endif

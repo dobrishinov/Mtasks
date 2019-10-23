@@ -1,10 +1,10 @@
 #include <Mtasks.h>
 
 /**
-*	Example how to use simple task and change task duration on run time.
+*	Example how to use simple task and change task execution interval on run time.
 */
 
-Mtasks taskOne(1000); //Create a task and specify the duration in miliseconds
+Mtasks taskOne(1000); //Create a task and specify the task execution interval in miliseconds
 
 void setup()
 {
@@ -13,11 +13,11 @@ void setup()
 
 void loop()
 {
-  bool isReadyToChangeDuration = true;
+  bool isReadyToChangeInterval = true;
 
-  if (isReadyToChangeDuration) //Example condition to change task duration on run time
+  if (isReadyToChangeInterval) //Example condition to change task execution interval on run time
   {
-    taskOne.setDuration(2000);
+    taskOne.setTaskInterval(2000);
   }
 
   if (taskOne.isTaskReady()) //Check if task is ready

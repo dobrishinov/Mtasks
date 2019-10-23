@@ -2,8 +2,8 @@
 
 ## Arduino Multi-Tasking library based on millis()
 
-Set duration of the task and execute the functions every time when duration is reached. 
-We have the option to change duration of the task runtime when we want.
+Set execution interval of the task and execute the functions every time when interval is reached. 
+We have the option to change interval of the task runtime when we want.
 
 ## Check the examples for more details of how to use it:
 
@@ -14,8 +14,8 @@ We have the option to change duration of the task runtime when we want.
 *	Example how to use multiple tasks.
 */
 
-Mtasks taskOne(1000); //Create a first task and specify the duration in miliseconds
-Mtasks taskTwo(250);  //Create a second task and specify the duration in miliseconds
+Mtasks taskOne(1000); //Create a first task and specify the task execution interval in miliseconds
+Mtasks taskTwo(250);  //Create a second task and specify the task execution interval in miliseconds
 
 void setup()
 {

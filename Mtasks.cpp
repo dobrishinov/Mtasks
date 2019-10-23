@@ -13,21 +13,21 @@ Mtasks::Mtasks()
     _init();
 }
 
-Mtasks::Mtasks(unsigned long duration)
+Mtasks::Mtasks(unsigned long interval)
 {
     _init();
-    setDuration(duration);
+    setTaskInterval(interval);
 }
 
 void Mtasks::_init()
 {
     this->_lastTime = 0;
-    this->_duration = 0;
+    this->_interval = 0;
 }
 
-void Mtasks::setDuration(unsigned long duration)
+void Mtasks::setTaskInterval(unsigned long interval)
 {
-    this->_duration = duration;
+    this->_interval = interval;
 }
 
 bool Mtasks::isTaskReady()
@@ -37,12 +37,12 @@ bool Mtasks::isTaskReady()
 
 bool Mtasks::isTaskReady(unsigned long currentTime)
 {
-    return _isTaskReady(currentTime, this->_duration);
+    return _isTaskReady(currentTime, this->_interval);
 }
 
-bool Mtasks::_isTaskReady(unsigned long currentTime, unsigned long duration)
+bool Mtasks::_isTaskReady(unsigned long currentTime, unsigned long interval)
 {
-    if ((unsigned long)currentTime - _lastTime >= duration)
+    if ((unsigned long)currentTime - _lastTime >= interval)
     {
         _lastTime = currentTime;
         return true;

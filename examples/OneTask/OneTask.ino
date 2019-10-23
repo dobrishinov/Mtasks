@@ -4,7 +4,7 @@
 *	Example how to use simple task.
 */
 
-Mtasks taskOne(1000); //Create a task and specify the duration in miliseconds
+Mtasks taskOne(1000); //Create a task and specify the task execution interval in miliseconds
 
 void setup()
 {
