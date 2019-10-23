@@ -52,10 +52,10 @@ bool Mtasks::_isTaskReady(unsigned long currentTime, unsigned long duration)
 
 void Mtasks::reset()
 {
-    setLastTime(millis());
+    _setLastTime(millis());
 }
 
-void Mtasks::setLastTime(unsigned long time)
+void Mtasks::_setLastTime(unsigned long time)
 {
     this->_lastTime = time;
 }

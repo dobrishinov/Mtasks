@@ -8,5 +8,4 @@ mtasks	KEYWORD1
 #######################################
 isTaskReady	KEYWORD2
 setDuration	KEYWORD2
-setLastTime	KEYWORD2
 reset	KEYWORD2

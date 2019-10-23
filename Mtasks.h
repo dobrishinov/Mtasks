@@ -18,13 +18,13 @@ public:
   bool isTaskReady(unsigned long currentTime);
 
   void setDuration(unsigned long duration);
-  void setLastTime(unsigned long time);
   void reset();
 
 private:
   unsigned long _lastTime;
   unsigned long _duration;
   void _init();
+  void _setLastTime(unsigned long time);
   bool _isTaskReady(unsigned long currentTime, unsigned long duration);
 };
 
