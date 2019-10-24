@@ -17,12 +17,15 @@ public:
 
   bool isTaskReady();
   bool isTaskReady(unsigned long currentTime);
+  bool isRunning();
 
-  void setTaskInterval(unsigned long interval);
-  void setTaskInterval(unsigned long interval, unsigned int durationCount);
+  void runTask(unsigned long interval);
+  void runTask(unsigned long interval, unsigned int durationCount);
+  void cleanTask();
   void reset();
 
 private:
+  bool _isRunning;
   unsigned long _lastTime;
   unsigned long _interval;
   unsigned int _durationCount;

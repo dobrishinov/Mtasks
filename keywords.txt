@@ -7,5 +7,7 @@ mtasks	KEYWORD1
 # Methods and Functions (KEYWORD2)
 #######################################
 isTaskReady	KEYWORD2
-setTaskInterval	KEYWORD2
+isRunning	KEYWORD2
+runTask	KEYWORD2
+cleanTask	KEYWORD2
 reset	KEYWORD2

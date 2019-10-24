@@ -17,7 +17,7 @@ void loop()
 
   if (isReadyToChangeInterval) //Example condition to change task execution interval on run time
   {
-    taskOne.setTaskInterval(2000);
+    taskOne.runTask(2000);
   }
 
   if (taskOne.isTaskReady()) //Check if task is ready
