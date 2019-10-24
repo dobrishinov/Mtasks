@@ -31,7 +31,7 @@ private:
   unsigned int _durationCount;
   void _init();
   void _setLastTime(unsigned long time);
-  bool _isTaskReady(unsigned long currentTime, unsigned long interval);
+  bool _taskProcessor(unsigned long currentTime, unsigned long interval);
 };
 
 #endif

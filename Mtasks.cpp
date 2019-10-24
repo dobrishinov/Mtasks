@@ -30,7 +30,7 @@ void Mtasks::_init()
     this->_lastTime = 0;
     this->_interval = 0;
     this->_durationCount = -1;
-    this->_isRunning = true;
+    this->_isRunning = false;
 }
 
 void Mtasks::runTask(unsigned long interval)
@@ -53,10 +53,10 @@ bool Mtasks::isTaskReady()
 
 bool Mtasks::isTaskReady(unsigned long currentTime)
 {
-    return _isTaskReady(currentTime, this->_interval);
+    return _taskProcessor(currentTime, this->_interval);
 }
 
-bool Mtasks::_isTaskReady(unsigned long currentTime, unsigned long interval)
+bool Mtasks::_taskProcessor(unsigned long currentTime, unsigned long interval)
 {
     if ((unsigned long)currentTime - _lastTime >= interval)
     {
