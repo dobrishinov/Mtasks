@@ -14,12 +14,12 @@ void setup()
 
 void loop()
 {
-  if (taskOne.isTaskReady()) //Check if first task is ready
+  if (taskOne.isTaskReady()) //Check if the first task is ready
   {
     Serial.println("Task 1 is Ready!"); //Call logic for your needs
   }
 
-  if (taskTwo.isTaskReady()) //Check if second task is ready
+  if (taskTwo.isTaskReady()) //Check if the second task is ready
   {
     Serial.println("Task 2 is Ready!"); //Call logic for your needs
   }
