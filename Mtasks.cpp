@@ -6,19 +6,34 @@
 #include "Mtasks.h"
 
 /**
-*   Constructors
+*   Constructor
 */
 Mtasks::Mtasks()
 {
     _init();
 }
 
+/**
+*   Mtasks();
+*   Input: unsigned long interval
+*   Output: void
+*   Descrtiption: Constructor with one input parameter - 
+*                 interval of the task (Every 1s, Every 2s..., etc.)
+*/
 Mtasks::Mtasks(unsigned long interval)
 {
     _init();
     runTask(interval);
 }
 
+/**
+*   Mtasks();
+*   Input: unsigned long interval
+*   Output: void
+*   Descrtiption: Constructor with two input parameter - 
+*                 interval of the task and duration of the task 
+*                 (Every 1s and 1 run, Every 2s and 10 runs..., etc.)
+*/
 Mtasks::Mtasks(unsigned long interval, unsigned int durationCount)
 {
     _init();
@@ -31,7 +46,7 @@ Mtasks::Mtasks(unsigned long interval, unsigned int durationCount)
 Mtasks::~Mtasks() {}
 
 /**
-*   Initialization
+*   Initialization: Set some default values on the tasks.
 */
 void Mtasks::_init()
 {
@@ -45,6 +60,9 @@ void Mtasks::_init()
 *   runTask();
 *   Input: unsigned long interval
 *   Output: void
+*   Descrtiption: Run some task which is stopped. 
+*                 We can pass the interval of the task. 
+*                 (Every 1s, Every 2s..., etc.)
 */
 void Mtasks::runTask(unsigned long interval)
 {
@@ -56,6 +74,9 @@ void Mtasks::runTask(unsigned long interval)
 *   runTask();
 *   Input: unsigned long interval, unsigned int durationCount
 *   Output: void
+*   Descrtiption: Run some task which is stopped. 
+*                 We can pass the interval and duration of the task. 
+*                 (Every 1s and 1 run, Every 2s and 10 runs..., etc.)
 */
 void Mtasks::runTask(unsigned long interval, unsigned int durationCount)
 {
@@ -68,6 +89,8 @@ void Mtasks::runTask(unsigned long interval, unsigned int durationCount)
 *   isTaskReady();
 *   Input: void
 *   Output: bool
+*   Descrtiption: This method returns true or false when the task is running, 
+*                 use the method in IF condition in the loop context to execute some logic.
 */
 bool Mtasks::isTaskReady()
 {
@@ -78,6 +101,10 @@ bool Mtasks::isTaskReady()
 *   isTaskReady();
 *   Input: unsigned long currentTime
 *   Output: bool
+*   Descrtiption: This method returns true or false when the task is running, 
+*                 use the method in IF condition in the loop context to execute some logic. 
+*                 We can pass one current time reference to the method, 
+*                 so if we use many tasks we can pass the same reference of the current time.
 */
 bool Mtasks::isTaskReady(unsigned long currentTime)
 {
@@ -88,6 +115,7 @@ bool Mtasks::isTaskReady(unsigned long currentTime)
 *   _taskProcessor();
 *   Input: unsigned long currentTime, unsigned long interval
 *   Output: bool
+*   Descrtiption: Calculation of the task times.
 */
 bool Mtasks::_taskProcessor(unsigned long currentTime, unsigned long interval)
 {
@@ -120,6 +148,8 @@ bool Mtasks::_taskProcessor(unsigned long currentTime, unsigned long interval)
 *   cleanTask();
 *   Input: void
 *   Output: void
+*   Descrtiption: Reset and stop current task. 
+*                 Disable duration of the task if exist and stop the task.
 */
 void Mtasks::cleanTask()
 {
@@ -131,6 +161,8 @@ void Mtasks::cleanTask()
 *   isRunning();
 *   Input: void
 *   Output: bool
+*   Descrtiption: Returns true or false when some task is running, 
+*                 we can use it in one task to check the status of the other task.
 */
 bool Mtasks::isRunning()
 {

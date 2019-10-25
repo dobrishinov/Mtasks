@@ -72,6 +72,21 @@ Using the same code above, you can check from other task "taskTwo", if "taskOne"
   }
 ```
 
+Using the same code above, you can pass one current time reference to the different tasks, so if we use many tasks we can pass the same reference of the current time. For example view MultipleTasksOneTimeReference example.
+```cpp
+  unsigned long timeNow = millis();
+
+  if (taskOne.isTaskReady(timeNow)) //Check if the first task is ready
+  {
+    Serial.println("Task 1 is Ready!"); //Call logic for your needs
+  }
+
+  if (taskTwo.isTaskReady(timeNow)) //Check if the second task is ready
+  {
+    Serial.println("Task 2 is Ready!"); //Call logic for your needs
+  }
+```
+
 ## Library Reference
 ### `Mtasks` class
 
