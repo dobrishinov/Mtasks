@@ -6,7 +6,7 @@
 #include "Mtasks.h"
 
 /**
-* Constructors
+*   Constructors
 */
 Mtasks::Mtasks()
 {
@@ -25,6 +25,14 @@ Mtasks::Mtasks(unsigned long interval, unsigned int durationCount)
     runTask(interval, durationCount);
 }
 
+/**
+*   Destructors
+*/
+Mtasks::~Mtasks() {}
+
+/**
+*   Initialization
+*/
 void Mtasks::_init()
 {
     this->_lastTime = 0;
@@ -33,12 +41,22 @@ void Mtasks::_init()
     this->_isRunning = false;
 }
 
+/**
+*   runTask();
+*   Input: unsigned long interval
+*   Output: void
+*/
 void Mtasks::runTask(unsigned long interval)
 {
     this->_interval = interval;
     this->_isRunning = true;
 }
 
+/**
+*   runTask();
+*   Input: unsigned long interval, unsigned int durationCount
+*   Output: void
+*/
 void Mtasks::runTask(unsigned long interval, unsigned int durationCount)
 {
     this->_interval = interval;
@@ -46,16 +64,31 @@ void Mtasks::runTask(unsigned long interval, unsigned int durationCount)
     this->_isRunning = true;
 }
 
+/**
+*   isTaskReady();
+*   Input: void
+*   Output: bool
+*/
 bool Mtasks::isTaskReady()
 {
     return isTaskReady(millis());
 }
 
+/**
+*   isTaskReady();
+*   Input: unsigned long currentTime
+*   Output: bool
+*/
 bool Mtasks::isTaskReady(unsigned long currentTime)
 {
     return _taskProcessor(currentTime, this->_interval);
 }
 
+/**
+*   _taskProcessor();
+*   Input: unsigned long currentTime, unsigned long interval
+*   Output: bool
+*/
 bool Mtasks::_taskProcessor(unsigned long currentTime, unsigned long interval)
 {
     if ((unsigned long)currentTime - _lastTime >= interval)
@@ -83,23 +116,23 @@ bool Mtasks::_taskProcessor(unsigned long currentTime, unsigned long interval)
     return false;
 }
 
+/**
+*   cleanTask();
+*   Input: void
+*   Output: void
+*/
 void Mtasks::cleanTask()
 {
     this->_durationCount = -1;
     this->_isRunning = false;
 }
 
+/**
+*   isRunning();
+*   Input: void
+*   Output: bool
+*/
 bool Mtasks::isRunning()
 {
     return _isRunning;
-}
-
-void Mtasks::reset()
-{
-    _setLastTime(millis());
-}
-
-void Mtasks::_setLastTime(unsigned long time)
-{
-    this->_lastTime = time;
 }

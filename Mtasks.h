@@ -14,6 +14,8 @@ public:
   Mtasks();
   Mtasks(unsigned long interval);
   Mtasks(unsigned long interval, unsigned int durationCount);
+  
+  ~Mtasks();
 
   bool isTaskReady();
   bool isTaskReady(unsigned long currentTime);
@@ -22,7 +24,6 @@ public:
   void runTask(unsigned long interval);
   void runTask(unsigned long interval, unsigned int durationCount);
   void cleanTask();
-  void reset();
 
 private:
   bool _isRunning;
@@ -30,7 +31,6 @@ private:
   unsigned long _interval;
   unsigned int _durationCount;
   void _init();
-  void _setLastTime(unsigned long time);
   bool _taskProcessor(unsigned long currentTime, unsigned long interval);
 };
 
